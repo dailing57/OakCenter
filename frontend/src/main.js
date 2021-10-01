@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css'
 
 import Vue3VideoPlayer from '@cloudgeek/vue3-video-player'
 import '@cloudgeek/vue3-video-player/dist/vue3-video-player.css'
+import '@/assets/css/global.css'
 
 import * as echarts from 'echarts'
 const app = createApp(App)

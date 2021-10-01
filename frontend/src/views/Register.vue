@@ -2,7 +2,10 @@
   <div style="display: flex;justify-content: center;">
     <el-card style="width: 500px">
       <el-form  ref="form" :model="form" size="normal" :rules="rules" style="padding: 0 5%  3%  5% ">
-        <el-form-item prop="id" label="注册用户名" class="regItem">
+        <el-form-item prop="id" label="用户ID" class="regItem">
+          <el-input prefix-icon="el-icon-user-solid" v-model="form.id"></el-input>
+        </el-form-item>
+        <el-form-item prop="id" label="昵称" class="regItem">
           <el-input prefix-icon="el-icon-user-solid" v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item prop="pwd" label="密码" class="regItem">
@@ -52,25 +55,14 @@ export default {
       }
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          let account = {
-            id: this.form.id,
-            pwd: this.form.pwd,
-            userType: this.userType,
-            user: {
-              id: this.form.id,
-              workId: this.form.workId,
-              name: '',
-              schoolId: '',
-              avatar: '',
-            }
-          }
-          request.post("/register", account).then(res => {
+          request.post("/register", this.form).then(res => {
             if (res.code === '0') {
               this.$message({
                 type: "success",
                 message: "注册成功"
               })
-              this.$router.push("/login")  //登录成功之后进行页面的跳转，跳转到主页
+              sessionStorage.setItem("user", JSON.stringify(res.data))
+              this.$router.go(0)
             } else {
               this.$message({
                 type: "error",

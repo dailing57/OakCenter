@@ -1,11 +1,11 @@
 <template>
 <div>
   <el-container>
-    <el-header><Header/></el-header>
+    <el-header style="padding: 0"><Header/></el-header>
     <el-main>
       <router-view/>
     </el-main>
-    <el-footer><Footer/></el-footer>
+    <el-footer style="padding: 0"><Footer/></el-footer>
   </el-container>
 </div>
 </template>

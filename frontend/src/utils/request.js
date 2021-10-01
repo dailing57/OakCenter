@@ -13,7 +13,7 @@ request.interceptors.request.use(config => {
     let userJson = sessionStorage.getItem("user")
     if (!whiteUrls.includes(config.url)) {
         if(!userJson) {
-            router.push("/login")
+
         } else {
             let user = JSON.parse(userJson);
             config.headers['token'] = user.token;
@@ -40,8 +40,7 @@ request.interceptors.response.use(
         }
         // 验证token
         if (res.code === '401') {
-            console.error("token过期，重新登录")
-            router.push("/login")
+            router.push("/")
         }
         return res;
     },

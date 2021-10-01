@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p>Copyright© 2021.&nbsp;&nbsp;&nbsp; 落叶栎研究中心.&nbsp;&nbsp;All rights reserved.</p>
+    <p>Copyright© 2021.&nbsp;&nbsp; 落叶栎研究中心.&nbsp;&nbsp;All rights reserved.</p>
   </div>
 </template>
 
@@ -13,11 +13,14 @@ export default {
 <style scoped>
 .footer {
   padding: 5px 10px;
-  margin: 10px auto 0 auto;
+  margin-top: 35px;
   font-size: 15px;
-  color: #8c939d;
-  /*width: 1000px;*/
-  background-color: rgba(255, 255, 255, 0.41);
+  bottom:0;
+  color: rgba(77, 143, 51, 0.62);
+  position:absolute;
   text-align: center;
+  height:35px;
+  width: 100%;
+  background-color: rgba(159, 208, 139, 0.6);
 }
 </style>
